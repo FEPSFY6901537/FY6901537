@@ -72,44 +72,6 @@ p.ex1 {
      </tr>
     </table>
 
-    <p id="date&time"></p>
-
-    <scripts>
-
-    //Javascript to display the date and time on my web page
-    const d = new Date();
-    document.getElementByld("date&time").innerHTML=d;
-
-    </scripts>
-
-
-  </head>
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>Change Button Colour</title>
-    </head>
-    <body>
-      <button id="colourButton">Click me to change colour</button>
-
-      <script>
-        //Get a referance to the buttion element
-        var button = document.getElementByld("colourButton");
-
-        //Function to change the button colour
-        function changeColour(){
-          //Generate a random colour (hexadecimal)
-          var randomColour = "#" + Math.floor(Math.random()*16777215).toString(16);
-
-          //Set the button's background colour to the random colour
-          button.style.backgroundColour=randomColour;
-        }
-
-        //Add a click event listener to the button
-        button.addEventListener("click",changeColour);
-      </script>
-    
     </body>
 
 </html>
