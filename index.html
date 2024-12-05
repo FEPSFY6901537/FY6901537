@@ -131,9 +131,9 @@ Thermite has the potential to be very dangerous due to the extreme temperatures 
 On the other hand, thermite’s use in welding highlights its constructive applications. In industries like railway construction and emergency ship repairs, thermite is utilised to quickly create durable welds in situations where conventional equipment may not be available. It’s high ignition temperature making it relatively safe to handle. Despite these beneficial uses, the high temperatures involved in thermite welding require careful handling and safety precautions to prevent accidents.
   </p>
 
-    <a href="url">https://www.microsoft.com/en-gb/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook</a>
-
 <hr>
+ 
+  <a href="url">https://www.microsoft.com/en-gb/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook</a>
 
 
 <!-- Last commit time display -->
@@ -201,14 +201,15 @@ On the other hand, thermite’s use in welding highlights its constructive appli
     // Return the word count for summing purposes
     return wordCount;
   }
-  // Function to calculate and display total word count from selected sections
-  function displayTotalWordCount() {
+
     // Calculate word count for each section and accumulate the total
     const IntroductionCount = displayWordCount("Introduction");
     const AnalysisCount = displayWordCount("Analysis and discussion");
     const ConclusionCount = displayWordCount("Conclusion");
     // Calculate the sum of all selected sections
     const TotalWordCount = IntroductionCount + AnalysisCount + ConclusionCount;
+    // Function to calculate and display total word count from selected sections
+    function displayTotalWordCount() {
     // Display the total word count
     document.getElementById("TotalWordCount").innerText = `Total word count: ${TotalWordCount}`;
   }
