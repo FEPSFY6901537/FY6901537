@@ -249,39 +249,20 @@ Star (Christchurch). (1906) NEW WELDING PROCESS, Paperspast.natlib.govt.nz. Avai
   <!-- ////////////////////////////// Word count function ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
 <!-- Placeholder for total word count -->
-<p id="TotalWordCount"></p>
-<hr>
-
 <script>
-    // Function to calculate and return word count for a specified section (including all elements inside)
-    function displayWordCount(sectionId) {
-        // Get the entire text content from the specified section (including paragraphs and links)
-        const section = document.getElementById(sectionId);
-        const text = section.textContent.trim();  // Use textContent to capture all visible text
-        // Split text into words based on spaces, and filter out any empty strings
-        const wordArray = text.split(/\s+/).filter(function(word) {
-            return word.length > 0;  // Only count non-empty words
-        });
-        // Return the number of words
-        return wordArray.length;
-    }
-
-    // Function to calculate and display total word count from selected sections
-    function displayTotalWordCount() {
-        // Calculate word count for each section, excluding the Abstract section
-        const IntroductionCount = displayWordCount("Introduction");
-        const AnalysisCount = displayWordCount("Analysis and discussion");
-        const ConclusionCount = displayWordCount("Conclusion");
-
-        // Calculate the sum of all selected sections
-        const TotalWordCount = IntroductionCount + AnalysisCount + ConclusionCount;
-
-        // Display the total word count
-        document.getElementById("TotalWordCount").innerText = `Total word count: ${TotalWordCount}`;
-    }
-
-    // Run the function to calculate and display total word count when the page loads
-    window.onload = displayTotalWordCount;
-</script>
+        function countWords() {
+            // Extract text from the paragraphs
+            var text = document.querySelector('p.ex1').innerText + ' ' + document.querySelectorAll('p.ex1')[1].innerText;
+            
+            // Remove extra spaces and split by spaces
+            var words = text.trim().split(/\s+/);
+            
+            // Get the word count
+            var wordCount = words.length;
+            
+            // Display the word count
+            document.getElementById('wordCount').innerText = 'Word Count: ' + wordCount;
+        }
+    </script>
 
    </html>
