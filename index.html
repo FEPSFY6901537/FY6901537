@@ -255,9 +255,9 @@ Star (Christchurch). (1906) NEW WELDING PROCESS, Paperspast.natlib.govt.nz. Avai
 <script>
     // Function to calculate and return word count for a specified section (including all elements inside)
     function displayWordCount(sectionId) {
-        // Get the text content from the specified section (including paragraphs and other content)
+        // Get the text content from the specified section (including all paragraphs and links)
         const section = document.getElementById(sectionId);
-        const text = section.innerText.trim();  // Get all text within the section
+        const text = section.innerText.trim();  // Get all text inside the section
         // Split text into words based on spaces and filter out any empty strings
         const wordArray = text.split(/\s+/).filter(function(word) {
             return word.length > 0; // Only count non-empty words
@@ -269,12 +269,13 @@ Star (Christchurch). (1906) NEW WELDING PROCESS, Paperspast.natlib.govt.nz. Avai
     // Function to calculate and display total word count from selected sections
     function displayTotalWordCount() {
         // Calculate word count for each section
+        const AbstractCount = displayWordCount("Abstract");
         const IntroductionCount = displayWordCount("Introduction");
         const AnalysisCount = displayWordCount("Analysis and discussion");
         const ConclusionCount = displayWordCount("Conclusion");
         
         // Calculate the sum of all selected sections
-        const TotalWordCount = IntroductionCount + AnalysisCount + ConclusionCount;
+        const TotalWordCount = AbstractCount + IntroductionCount + AnalysisCount + ConclusionCount;
 
         // Display the total word count
         document.getElementById("TotalWordCount").innerText = `Total word count: ${TotalWordCount}`;
