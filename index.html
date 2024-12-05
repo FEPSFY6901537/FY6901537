@@ -137,12 +137,6 @@ Thermite has long been used in the military to disable artillery, a practice dat
     <img src="Thermite(3-12-06).jpg" alt="Banner" width="300" height="300">
   <p class="ex1">
 <a href="#A">(Amazing Rust.com - Thermite (2008))</a>
-<a href="#E"></a>
-<a href="#H"></a>
-<a href="#N"></a>
-<a href="#P"></a>
-<a href="#R"></a>
-<a href="#S"></a>
     </p>
     
     
@@ -249,23 +243,30 @@ Star (Christchurch). (1906) NEW WELDING PROCESS, Paperspast.natlib.govt.nz. Avai
   <!-- ////////////////////////////// Word count function ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
 
-    <button onclick="countWords()">Count Words</button>
-    <div id="wordCount"></div>
-
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count</title>
     <script>
         function countWords() {
-            // Extract text from the paragraphs
-            var text = document.querySelector('p.ex1').innerText + ' ' + document.querySelectorAll('p.ex1')[1].innerText;
-            
-            // Remove extra spaces and split by spaces
-            var words = text.trim().split(/\s+/);
-            
-            // Get the word count
-            var wordCount = words.length;
-            
-            // Display the word count
-            document.getElementById('wordCount').innerText = 'Word Count: ' + wordCount;
-        }
-    </script>
+            // Get all the paragraphs with the class "ex1"
+            const paragraphs = document.querySelectorAll('.ex1');
+            let wordCount = 0;
 
+            // Iterate through each paragraph and count the words
+            paragraphs.forEach(p => {
+                // Split the paragraph text into words and count the length
+                const words = p.textContent.trim().split(/\s+/);
+                wordCount += words.length;
+            });
+
+            // Display the word count
+            document.getElementById('wordCount').innerText = `Total Word Count: ${wordCount}`;
+        }
+
+        window.onload = countWords;
+    </script>
+</head>
+<p id="wordCount">Total Word Count: 0</p>
    </html>
