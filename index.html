@@ -248,8 +248,11 @@ Star (Christchurch). (1906) NEW WELDING PROCESS, Paperspast.natlib.govt.nz. Avai
  <!-- //////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////// Word count function ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
-<!-- Placeholder for total word count -->
-<script>
+
+    <button onclick="countWords()">Count Words</button>
+    <div id="wordCount"></div>
+
+    <script>
         function countWords() {
             // Extract text from the paragraphs
             var text = document.querySelector('p.ex1').innerText + ' ' + document.querySelectorAll('p.ex1')[1].innerText;
